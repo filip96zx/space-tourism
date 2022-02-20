@@ -1,10 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
+import backgroundMoblile from '../assets/home/background-home-mobile.jpg';
 
 const GlobalStyle = createGlobalStyle`
 
 @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;400;700&display=swap');
 
 
 * {
@@ -23,6 +24,8 @@ body {
   font-family: 'Barlow', sans-serif;
   color: var(--font-color);
   background-color: black;
+  background-image: url(${backgroundMoblile});
+  background-size: cover;
 }
 
 h1, h2, h3, h4 {
