@@ -22,6 +22,7 @@ html {
 body {
   font-family: 'Barlow', sans-serif;
   color: var(--font-color);
+  background-color: black;
 }
 
 h1, h2, h3, h4 {
