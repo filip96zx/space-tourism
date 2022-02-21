@@ -9,7 +9,7 @@ const NavigationStyled = styled.nav`
   padding-left: 32px;
 
   background-color: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(81.5485px);
+  backdrop-filter: blur(31px);
 
   transition: .3s;
   &.hide {
