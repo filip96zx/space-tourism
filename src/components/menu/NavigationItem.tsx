@@ -5,12 +5,13 @@ import NavigationItemStyled from './NavigationItem.style';
 interface Props {
   text: string;
   to: string;
+  closeMenu: () => void;
 }
 
-const NavigationItem: React.FC<Props> = ({ text, to }) => {
+const NavigationItem: React.FC<Props> = ({ text, to, closeMenu }) => {
   return (
     <NavigationItemStyled>
-      <Link to={to}>{text}</Link>
+      <Link onClick={closeMenu} to={to}>{text}</Link>
     </NavigationItemStyled>
   );
 };

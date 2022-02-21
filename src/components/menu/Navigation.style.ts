@@ -7,17 +7,12 @@ const NavigationStyled = styled.nav`
   width: 75%;
   height: 100vh;
   padding-left: 32px;
-
   background-color: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(31px);
-
   transition: .3s;
+  
   &.hide {
-    opacity: 0;
-  }
-
-  &.show {
-    opacity: 1;           
+    transform: translateX(100%);
   }
   
   ol {

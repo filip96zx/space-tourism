@@ -4,18 +4,19 @@ import NavigationItem from './NavigationItem';
 
 interface Props {
   showMenu: boolean;
+  closeMenu: () => void;
 }
 
-const Navigation: React.FC<Props> = ({ showMenu }) => {
+const Navigation: React.FC<Props> = ({ showMenu, closeMenu }) => {
 
   return (
     <>
-      <NavigationStyled className={showMenu ? 'show': 'hide'}>
+      <NavigationStyled className={showMenu ? '' : 'hide'}>
         <ol>
-          <NavigationItem to='/' text='home' />
-          <NavigationItem to='/destination' text='destination' />
-          <NavigationItem to='/crew' text='crew' />
-          <NavigationItem to='/technology' text='technology' />
+          <NavigationItem closeMenu={closeMenu} to='/' text='home' />
+          <NavigationItem closeMenu={closeMenu} to='/destination' text='destination' />
+          <NavigationItem closeMenu={closeMenu} to='/crew' text='crew' />
+          <NavigationItem closeMenu={closeMenu} to='/technology' text='technology' />
         </ol>
       </NavigationStyled>
     </>

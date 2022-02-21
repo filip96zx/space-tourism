@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-
 const MenuStyled = styled.header`
+  position: absolute;
   width: 100%;
-
+  
   .icons-container {
     position: relative;
     width: calc(100vw - 2 * 24px);

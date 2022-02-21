@@ -12,6 +12,8 @@ const Menu: React.FC = () => {
     setShowMenu(prevState => !prevState);
   };
 
+  const closeHandler = () => setShowMenu(false);
+
   const menuToggleButton = (
     <button onClick={toggleMenu} className='menu-icon'>{showMenu ? <CloseIcon /> : <HamburgerIcon />}</button>
   );
@@ -22,7 +24,7 @@ const Menu: React.FC = () => {
         <LogoIcon className='logo' />
         {menuToggleButton}
       </div>
-      <Navigation showMenu={showMenu} />
+      <Navigation showMenu={showMenu} closeMenu={closeHandler}/>
     </MenuStyled>
   );
 };
