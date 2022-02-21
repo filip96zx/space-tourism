@@ -1,74 +1,68 @@
 import { createGlobalStyle } from 'styled-components';
-import backgroundMoblile from '../assets/home/background-home-mobile.jpg';
 
 const GlobalStyle = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;700&display=swap');
 
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;  
+    padding: 0;
+  }
 
-html {
-  --main-color: rgb(11,13,23);
-  --secondary-color: rgb(208,214,249);
-  --font-color: rgb(255,255,255);
-}
+  html {
+    --main-color: rgb(11,13,23);
+    --secondary-color: rgb(208,214,249);
+    --font-color: rgb(255,255,255);
+  }
 
-body {
-  font-family: 'Barlow', sans-serif;
-  color: var(--font-color);
-  background-color: black;
-  background-image: url(${backgroundMoblile});
-  background-size: cover;
-}
+  body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--font-color);
+    width: 100vw;
+    overflow-x: hidden;
+  }
 
-h1, h2, h3, h4 {
-  font-family: 'Bellefair', serif;
-  font-weight: 400;
-  font-size: 156px;
-}
+  h1, h2, h3, h4 {
+    font-family: 'Bellefair', serif;
+    font-weight: 400;
+    font-size: 156px;
+  }
 
-h2 {
-  font-size: 100px;
-}
+  h2 {
+    font-size: 100px;
+  }
 
-h3 {
-  font-size: 56px;
-}
+  h3 {
+    font-size: 56px;
+  }
 
-h4 {
-  font-size: 32px;
-}
+  h4 {
+    font-size: 32px;
+  }
 
-h5 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  letter-spacing: 4.75px;
-}
+  h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 4.75px;
+  }
 
-.subheading-1 {
-  font-family: 'Bellefair', serif;
-  font-size: 28px;
-}
+  .subheading-1 {
+    font-family: 'Bellefair', serif;
+    font-size: 28px;
+  }
 
-.subheading-2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 14px;
-  letter-spacing: 2.35px;
-}
+  .subheading-2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2.35px;
+  }
 
-nav {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 16x;
-  letter-spacing: 2.7px;
-}
+
 
 `;
 
