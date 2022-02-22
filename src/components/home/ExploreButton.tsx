@@ -1,5 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import ExploreButtonsStyled from './ExploreButton.style';
 
-const ExploreButton = () => <ExploreButtonsStyled>EXPLORE</ExploreButtonsStyled>;
+const ExploreButton = () => {
+
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    navigate('destination');
+  };
+
+  return <ExploreButtonsStyled onClick={clickHandler}>EXPLORE</ExploreButtonsStyled>;
+};
 
 export default ExploreButton;
