@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import Destination from '../../models/destination.model';
 import DestinationComponentStyled from './DestinationComponent.style';
-import { DestinationRef } from './DestinationContainer';
 import DestinationInfo from './DestinationInfo';
-import DestinationPicture from './DestinationPicture';
+import PagePicture from '../displayElements/PagePicture';
 
 interface Props {
   data: Destination;
@@ -22,7 +21,7 @@ const DestinationComponent: React.FC<Props> = ({ data, addRef }) => {
 
   return (
     <DestinationComponentStyled ref={componentRef}>
-      <DestinationPicture imagePaths={data.imagePaths} />
+      <PagePicture imagePaths={data.imagePaths} />
       <h2 >{data.title}</h2>
       <p>{data.description}</p>
       <DestinationInfo title='avg. distance'>{data.distance}</DestinationInfo>

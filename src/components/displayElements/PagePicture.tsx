@@ -1,5 +1,5 @@
 import React from 'react';
-import DestinationPictureStyled from './DestinationPicture.style';
+import PagePictureStyled from './PagePicture.style';
 
 interface Props {
   imagePaths: {
@@ -10,12 +10,12 @@ interface Props {
 
 const DestinationPicture: React.FC<Props> = ({ imagePaths }) => {
   return (
-    <DestinationPictureStyled>
+    <PagePictureStyled>
       <picture>
         <source srcSet={imagePaths.webp} type='image/webp' />
         <img src={imagePaths.png} alt='planet' />
       </picture>
-    </DestinationPictureStyled>
+    </PagePictureStyled>
   );
 };
 

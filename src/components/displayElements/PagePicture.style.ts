@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const DestinationPictureStyled = styled.div`
+const PagePictureStyled = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -11,4 +11,4 @@ const DestinationPictureStyled = styled.div`
   }
 `;
 
-export default DestinationPictureStyled;
+export default PagePictureStyled;
