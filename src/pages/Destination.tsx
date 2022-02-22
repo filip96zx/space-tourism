@@ -1,12 +1,6 @@
 import React from 'react';
+import DestinationContainer from '../components/destination/DestinationContainer';
 
-const Destination: React.FC = () => {
-
-  return (
-    <div>
-      Destination Page
-    </div>
-  );
-};
+const Destination: React.FC = () => <DestinationContainer />;
 
 export default Destination;
