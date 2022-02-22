@@ -4,9 +4,16 @@ import { ReactComponent as HamburgerIcon } from '../../assets/shared/icon-hambur
 import { ReactComponent as CloseIcon } from '../../assets/shared/icon-close.svg';
 import MenuStyled from './Menu.style';
 import Navigation from './Navigation';
+import { useNavigate } from 'react-router-dom';
 
 const Menu: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    navigate('/');
+  };
 
   const toggleMenu = () => {
     setShowMenu(prevState => !prevState);
@@ -21,10 +28,10 @@ const Menu: React.FC = () => {
   return (
     <MenuStyled>
       <div className='icons-container'>
-        <LogoIcon className='logo' />
+        <LogoIcon onClick={clickHandler} className='logo' />
         {menuToggleButton}
       </div>
-      <Navigation showMenu={showMenu} closeMenu={closeHandler}/>
+      <Navigation showMenu={showMenu} closeMenu={closeHandler} />
     </MenuStyled>
   );
 };

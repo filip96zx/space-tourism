@@ -23,7 +23,7 @@ const MenuStyled = styled.header`
     width: 24px;
     transform: translateY(-50%);
     float: right;
-    z-index: 1;
+    z-index: 2;
     background: none;
     border: none;
   }
