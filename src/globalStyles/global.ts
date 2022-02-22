@@ -2,11 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
-  @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;700&display=swap');
-
-
   * {
     box-sizing: border-box;
     margin: 0;  
@@ -23,7 +18,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Barlow', sans-serif;
     color: var(--font-color);
     width: 100vw;
-    overflow-x: hidden;
   }
 
   h1, h2, h3, h4 {
