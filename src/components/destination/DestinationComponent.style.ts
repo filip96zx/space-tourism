@@ -3,9 +3,9 @@ import styled from 'styled-components';
 const DestinationComponentStyled = styled.div`
   width: 100vw;
   scroll-snap-align: start;
-  
+
   h2 {
-    margin-top: 20px;
+    margin-top: 74px;
     width: 100vw;
     text-align: center;
     text-transform: uppercase;

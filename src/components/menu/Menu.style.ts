@@ -12,8 +12,10 @@ const MenuStyled = styled.header`
   }
 
   .logo {
+    position: absolute;
     width: 40px;
     height: 40px;
+    z-index: 3;
   }
 
   .menu-icon {
@@ -23,7 +25,7 @@ const MenuStyled = styled.header`
     width: 24px;
     transform: translateY(-50%);
     float: right;
-    z-index: 2;
+    z-index: 3;
     background: none;
     border: none;
   }

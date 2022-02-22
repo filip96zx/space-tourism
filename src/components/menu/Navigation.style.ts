@@ -10,7 +10,7 @@ const NavigationStyled = styled.nav`
   background-color: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(31px);
   transition: .3s;
-  z-index: 1;
+  z-index: 2;
   &.hide {
     transform: translateX(100%);
   }

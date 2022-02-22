@@ -5,7 +5,7 @@ import DestinationNavigationStyled from './DestinationNavigation.style';
 interface Props {
   destinationRefs: DestinationRef[];
   currentTitle: string;
-  scrollFn: (ref: HTMLDivElement) => void;
+  scrollFn: (ref: DestinationRef) => void;
 }
 
 const DestinationNavigation: React.FC<Props> = ({ destinationRefs, currentTitle, scrollFn }) => {
@@ -13,7 +13,7 @@ const DestinationNavigation: React.FC<Props> = ({ destinationRefs, currentTitle,
     <DestinationNavigationStyled>
       {destinationRefs?.map(ref => (
         <li key={destinationRefs.indexOf(ref)}>
-          <button className={currentTitle === ref.title ? 'active' : ''} onClick={() => { scrollFn(ref.ref); }}>{ref.title}
+          <button className={currentTitle === ref.title ? 'active' : ''} onClick={() => { scrollFn(ref); }}>{ref.title}
           </button>
         </li>
       ))}

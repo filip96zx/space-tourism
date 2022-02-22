@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 const DestinationNavigationStyled = styled.ul`
-
   width: 100vw;
   list-style: none;
   display: flex;
   justify-content: center;
   margin-top: 26px;
+  position: absolute;
+  z-index: 1;
+  top: 315px;
 
   button {
     background-color: transparent;
@@ -21,6 +23,7 @@ const DestinationNavigationStyled = styled.ul`
     cursor: pointer;
     text-transform: uppercase;
     &.active{
+      transition: 0.15s;
       border-bottom: 3px solid var(--font-color);
     }
 

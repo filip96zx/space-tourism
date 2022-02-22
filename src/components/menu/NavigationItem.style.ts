@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const NavigationItemStyled = styled.li`
-  
   counter-increment: counter;
   margin-bottom: 32px;
+  
   a {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 16x;
