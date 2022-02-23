@@ -6,7 +6,7 @@ import PagePicture from '../displayElements/PagePicture';
 
 interface Props {
   data: Destination;
-  addRef: (title: string, ref: HTMLDivElement) => void;
+  addRef: (ref: HTMLDivElement) => void;
 };
 
 const DestinationComponent: React.FC<Props> = ({ data, addRef }) => {
@@ -15,7 +15,7 @@ const DestinationComponent: React.FC<Props> = ({ data, addRef }) => {
 
   useEffect(() => {
     if (componentRef) {
-      addRef(data.title, componentRef.current!);
+      addRef(componentRef.current!);
     }
   }, []);
 

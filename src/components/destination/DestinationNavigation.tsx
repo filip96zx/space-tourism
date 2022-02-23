@@ -1,19 +1,19 @@
 import React from 'react';
-import { DestinationRef } from './DestinationContainer';
 import DestinationNavigationStyled from './DestinationNavigation.style';
 
 interface Props {
-  destinationRefs: DestinationRef[];
-  currentTitle: string;
-  scrollFn: (ref: DestinationRef) => void;
+  subpageRefs: HTMLDivElement[];
+  currentSubpage: HTMLDivElement | undefined;
+  titleList: string[];
+  scrollFn: (ref: HTMLDivElement) => void;
 }
 
-const DestinationNavigation: React.FC<Props> = ({ destinationRefs, currentTitle, scrollFn }) => {
+const DestinationNavigation: React.FC<Props> = ({ subpageRefs, currentSubpage, titleList, scrollFn }) => {
   return (
     <DestinationNavigationStyled>
-      {destinationRefs?.map(ref => (
-        <li key={destinationRefs.indexOf(ref)}>
-          <button className={currentTitle === ref.title ? 'active' : ''} onClick={() => { scrollFn(ref); }}>{ref.title}
+      {subpageRefs?.map(ref => (
+        <li key={subpageRefs.indexOf(ref)}>
+          <button className={currentSubpage === ref ? 'active' : ''} onClick={() => { scrollFn(ref); }}>{titleList[subpageRefs.indexOf(ref)]}
           </button>
         </li>
       ))}

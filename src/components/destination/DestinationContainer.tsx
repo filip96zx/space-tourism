@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useRef } from 'react';
 import Destination from '../../models/destination.model';
 import DestinationComponent from './DestinationComponent';
 import DestinationContainerStyled from './DestinationContainer.style';
@@ -13,6 +13,7 @@ import TitanPng from '../../assets/destination/image-titan.png';
 import TitanWebp from '../../assets/destination/image-titan.webp';
 import DestinationNavigation from './DestinationNavigation';
 import PageHeading from '../displayElements/PageHeading';
+import useSlider from '../../helpers/slider';
 
 const destinations: Destination[] = [
   {
@@ -62,54 +63,20 @@ const destinations: Destination[] = [
 
 ];
 
-export interface DestinationRef { title: string, ref: HTMLDivElement; }
+const titleList = destinations.map(item => item.title);
 
 const DestinationContainer: React.FC = () => {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [currentTitle, setCurrentTitle] = useState('');
-
-  const [destinationsRefs, setDestinationsRefs] = useState<DestinationRef[]>([]);
-
-  const addDestinationRef = useCallback(
-    (title: string, ref: HTMLDivElement) => {
-      const newRef = { title, ref };
-      setDestinationsRefs(prevState => [...prevState.filter(item => item.title !== title), newRef]);
-    }, []);
-
-  const scrollIntoDestinationHandler = (ref: DestinationRef) => {
-    ref.ref.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  useEffect(() => {
-    if (destinationsRefs) {
-      setCurrentTitle(destinationsRefs[0]?.title);
-      let lastValue = 0;
-      const innerWidth = window.innerWidth;
-
-      const changeCurrentTitleOnScroll = (container: HTMLDivElement) => {
-
-        const currentValue = Math.floor(((container.scrollLeft + innerWidth / 2) / innerWidth));
-
-        if (lastValue !== currentValue) {
-          lastValue = currentValue;
-          setCurrentTitle(destinationsRefs[currentValue]?.title);
-        }
-      };
-
-      if (containerRef.current) {
-        containerRef.current.addEventListener('scroll', () => { changeCurrentTitleOnScroll(containerRef.current!); });
-      }
-    }
-  }, [destinationsRefs]);
+  const { currentSubpage, subpageRefs, addSubpageRef, scrollIntoSubpage } = useSlider(containerRef.current, destinations.length);
 
   return (
     <>
-      <DestinationNavigation currentTitle={currentTitle} destinationRefs={destinationsRefs} scrollFn={scrollIntoDestinationHandler} />
+      <DestinationNavigation currentSubpage={currentSubpage} subpageRefs={subpageRefs} titleList={titleList} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='01'>pick your destination</PageHeading>
       <DestinationContainerStyled ref={containerRef}>
-        {destinations.map(item => <DestinationComponent key={item.id} addRef={addDestinationRef} data={item} />)}
+        {destinations.map(item => <DestinationComponent key={item.id} addRef={addSubpageRef} data={item} />)}
       </DestinationContainerStyled>
     </>
   );
