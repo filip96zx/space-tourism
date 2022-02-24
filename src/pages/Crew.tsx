@@ -1,12 +1,6 @@
 import React from 'react';
+import CrewContainer from '../components/crew/CrewContainer';
 
-const Crew: React.FC = () => {
-
-  return (
-    <div>
-      <h1>crew</h1>
-    </div>
-  );
-};
+const Crew: React.FC = () => <CrewContainer/>
 
 export default Crew;
