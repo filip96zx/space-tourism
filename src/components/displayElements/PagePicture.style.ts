@@ -8,6 +8,7 @@ const PagePictureStyled = styled.div`
   img {
     width: 170px;
     height: 170px; 
+    vertical-align: middle;
   }
 `;
 
