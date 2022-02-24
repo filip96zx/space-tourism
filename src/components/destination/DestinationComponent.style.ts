@@ -19,6 +19,7 @@ const DestinationComponentStyled = styled.div`
     padding-bottom: 32px;
     border-bottom: 1px solid #383B4B;
     line-height: 25px;
+    font-size: 15px;
   }
 
 `;
