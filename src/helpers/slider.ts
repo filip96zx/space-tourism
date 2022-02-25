@@ -11,7 +11,12 @@ const useSlider = (pageContainer: HTMLDivElement | null, subpagesCount: number) 
     }, []);
 
   const scrollIntoSubpage = (ref: HTMLDivElement) => {
+    pageContainer!.style.scrollSnapType = 'none';
     ref.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      pageContainer!.style.scrollSnapType = 'x mandatory';
+    }, window.scrollY > 0 ? 2000 : 700);
+
   };
 
   useEffect(() => {

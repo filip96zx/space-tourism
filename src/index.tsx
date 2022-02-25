@@ -4,6 +4,9 @@ import App from './App';
 import GlobalStyle from './globalStyles/global';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import smoothscroll from 'smoothscroll-polyfill';
+
+smoothscroll.polyfill();
 
 ReactDOM.render(
   <React.StrictMode>

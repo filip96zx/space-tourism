@@ -7,9 +7,6 @@ const PageContainerBase = (mobileBackground?: string, tabletBackground?: string,
   overflow-x: scroll;
   display: flex;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  position: relative;
-
 `;
 
 export default PageContainerBase;
