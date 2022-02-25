@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
+const isIOS = (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+
 const useSlider = (pageContainer: HTMLDivElement | null, subpagesCount: number) => {
 
   const [currentSubpage, setCurrentSubpage] = useState<HTMLDivElement>();
@@ -11,23 +14,23 @@ const useSlider = (pageContainer: HTMLDivElement | null, subpagesCount: number) 
     }, []);
 
   const scrollIntoSubpage = (ref: HTMLDivElement) => {
-    pageContainer!.style.scrollSnapType = 'none';
-    ref.scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => {
-      pageContainer!.style.scrollSnapType = 'x mandatory';
-    }, window.scrollY > 0 ? 2000 : 700);
+    if (isIOS) pageContainer!.style.scrollSnapType = 'none';
 
+    ref.scrollIntoView({ behavior: 'smooth' });
+
+    if (isIOS) setTimeout(() => {
+      pageContainer!.style.scrollSnapType = 'x mandatory';
+    }, 700);
   };
 
   useEffect(() => {
     if (subpageRefs.length === subpagesCount) {
       setCurrentSubpage(subpageRefs[0]);
       let lastValue = 0;
-      const innerWidth = window.innerWidth;
 
       const changeCurrentSubpage = (container: HTMLDivElement) => {
 
-        const currentValue = Math.floor(((container.scrollLeft + innerWidth / 2) / innerWidth));
+        const currentValue = Math.floor(((container.scrollLeft + window.innerWidth / 2) / window.innerWidth));
 
         if (lastValue !== currentValue) {
           lastValue = currentValue;
