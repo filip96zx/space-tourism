@@ -1,35 +1,25 @@
 import styled from 'styled-components';
+import PageNavigationBase from '../displayElements/PageNavigationBase.style';
 
-const DestinationNavigationStyled = styled.ul`
-  width: 100vw;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 26px;
-  position: absolute;
-  z-index: 1;
-  top: 315px;
+const DestinationNavigationStyled = styled(PageNavigationBase)`
 
   button {
     background-color: transparent;
     color: var(--font-color);
-    border: none;
     margin: 0 13px;
-    font-size: 14px;
+    width: auto;
+    height: auto;
     letter-spacing: 2.36px;
+    font-family: "Barlow Condensed", sans-serif;
     padding-bottom: 7px;
     line-height: 17px;
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
+    font-size: 14px;
+    opacity: 1;
     text-transform: uppercase;
+    border-radius: 0;
     &.active{
-      transition: 0.15s;
       border-bottom: 3px solid var(--font-color);
     }
-
-    /* :hover {
-      border-bottom: 3px solid rgba(255, 255, 255, 0.5)
-    } */
   }
 `;
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CrewNavigationStyled = styled.ul`
+const PageNavigationBase = styled.ul`
   width: 100vw;
   list-style: none;
   display: flex;
@@ -11,20 +11,20 @@ const CrewNavigationStyled = styled.ul`
   top: 315px;
 
   button {
+    background-color: var(--font-color);
+    margin: 0 8px;
     height: 10px;
     width: 10px;
     border-radius: 50%;
     border: none;
-    background-color: var(--font-color);
     opacity: 0.17;
-    margin: 0 8px;
-
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
     &.active{
       transition: 0.15s;
       opacity: 1;
     }
   }
-
 `;
 
-export default CrewNavigationStyled;
+export default PageNavigationBase;

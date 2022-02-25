@@ -11,8 +11,8 @@ import AnoushehPng from '../../assets/crew/image-anousheh-ansari.png';
 import AnoushehWebp from '../../assets/crew/image-anousheh-ansari.webp';
 import PageHeading from '../displayElements/PageHeading';
 import CrewContainerStyled from './CrewContainer.style';
-import CrewNavigation from './CrewNavigation';
 import CrewComponent from './CrewComponent';
+import PageNavigation from '../displayElements/PageNavigation';
 
 const crew = [
   {
@@ -63,7 +63,7 @@ const CrewContainer: React.FC = () => {
   const { currentSubpage, subpageRefs, addSubpageRef, scrollIntoSubpage } = useSlider(containerRef.current, crew.length);
   return (
     <>
-      <CrewNavigation currentSubpage={currentSubpage} subpageRefs={subpageRefs} scrollFn={scrollIntoSubpage} />
+      <PageNavigation currentSubpage={currentSubpage} subpageRefs={subpageRefs} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='02'>Meet your crew</PageHeading>
       <CrewContainerStyled ref={containerRef}>
         {crew.map(item => <CrewComponent key={item.id} addRef={addSubpageRef} data={item} />)}

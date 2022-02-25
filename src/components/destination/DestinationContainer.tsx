@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import Destination from '../../models/destination.model';
 import DestinationComponent from './DestinationComponent';
 import DestinationContainerStyled from './DestinationContainer.style';
+import DestinationNavigationStyled from './DestinationNavigation.style';
 
 import MoonPng from '../../assets/destination/image-moon.png';
 import MoonWebp from '../../assets/destination/image-moon.webp';
@@ -11,9 +12,9 @@ import EuropaPng from '../../assets/destination/image-europa.png';
 import EuropaWebp from '../../assets/destination/image-europa.webp';
 import TitanPng from '../../assets/destination/image-titan.png';
 import TitanWebp from '../../assets/destination/image-titan.webp';
-import DestinationNavigation from './DestinationNavigation';
 import PageHeading from '../displayElements/PageHeading';
 import useSlider from '../../helpers/slider';
+import PageNavigation from '../displayElements/PageNavigation';
 
 const destinations: Destination[] = [
   {
@@ -73,7 +74,7 @@ const DestinationContainer: React.FC = () => {
 
   return (
     <>
-      <DestinationNavigation currentSubpage={currentSubpage} subpageRefs={subpageRefs} titleList={titleList} scrollFn={scrollIntoSubpage} />
+      <PageNavigation Styling={DestinationNavigationStyled} currentSubpage={currentSubpage} subpageRefs={subpageRefs} buttonsText={titleList} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='01'>pick your destination</PageHeading>
       <DestinationContainerStyled ref={containerRef}>
         {destinations.map(item => <DestinationComponent key={item.id} addRef={addSubpageRef} data={item} />)}
