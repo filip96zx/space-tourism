@@ -3,6 +3,8 @@ import { useCallback, useEffect, useState } from 'react';
 const isIOS = (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
   (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
 
+
+
 const useSlider = (pageContainer: HTMLDivElement | null, subpagesCount: number) => {
 
   const [currentSubpage, setCurrentSubpage] = useState<HTMLDivElement>();
@@ -13,14 +15,32 @@ const useSlider = (pageContainer: HTMLDivElement | null, subpagesCount: number) 
       setSubpageRefs(prevState => [...prevState.filter(item => item !== ref), ref]);
     }, []);
 
-  const scrollIntoSubpage = (ref: HTMLDivElement) => {
-    if (isIOS) pageContainer!.style.scrollSnapType = 'none';
 
-    ref.scrollIntoView({ behavior: 'smooth' });
-
-    if (isIOS) setTimeout(() => {
+  const setContainerScrollSnapMandatory = (milliseconds: number) => {
+    setTimeout(() => {
       pageContainer!.style.scrollSnapType = 'x mandatory';
-    }, 700);
+    }, milliseconds);
+  };
+
+  const scrollIntoSubpage = (ref: HTMLDivElement) => {
+    if (isIOS) {
+      pageContainer!.style.scrollSnapType = 'none';
+      if (window.scrollY !== 0) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        setTimeout(() => {
+          ref.scrollIntoView({ behavior: 'smooth' });
+        }, 550);
+        setContainerScrollSnapMandatory(1600);
+      } else {
+        ref.scrollIntoView({ behavior: 'smooth' });
+        setContainerScrollSnapMandatory(600);
+      }
+    } else {
+      ref.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   useEffect(() => {
