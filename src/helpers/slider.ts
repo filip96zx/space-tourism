@@ -1,14 +1,14 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-const isIOS = (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
-  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+const isIOS = (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
 
+const useSlider = (subpagesCount: number) => {
 
-
-const useSlider = (pageContainer: HTMLDivElement | null, subpagesCount: number) => {
-
+  const pageContainerRef = useRef<HTMLDivElement>(null);
   const [currentSubpage, setCurrentSubpage] = useState<HTMLDivElement>();
   const [subpageRefs, setSubpageRefs] = useState<HTMLDivElement[]>([]);
+
+  const pageContainer = pageContainerRef.current;
 
   const addSubpageRef = useCallback(
     (ref: HTMLDivElement) => {
@@ -65,6 +65,7 @@ const useSlider = (pageContainer: HTMLDivElement | null, subpagesCount: number) 
   }, [subpageRefs, pageContainer, subpagesCount]);
 
   return {
+    setPageContainerRef: () => pageContainerRef,
     currentSubpage,
     subpageRefs,
     addSubpageRef,

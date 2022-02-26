@@ -1,27 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Destination from '../../models/destination.model';
 import DestinationComponentStyled from './DestinationComponent.style';
 import DestinationInfo from './DestinationInfo';
 import PagePicture from '../displayElements/PagePicture';
+import { usePageSliderHandler, Props } from '../../helpers/pageSliderHandler';
 
-interface Props {
-  data: Destination;
-  addRef: (ref: HTMLDivElement) => void;
-};
+const DestinationComponent: React.FC<Props<Destination>> = ({ data, addRef }) => {
 
-const DestinationComponent: React.FC<Props> = ({ data, addRef }) => {
-
-  const componentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (componentRef) {
-      addRef(componentRef.current!);
-    }
-  }, []);
+  const componentRef = usePageSliderHandler(addRef);
 
   return (
     <DestinationComponentStyled ref={componentRef}>
-      <PagePicture imagePaths={data.imagePaths} />
+      <PagePicture imagePaths={data.imagePaths} alt={data.title + " photo"}/>
       <h2 >{data.title}</h2>
       <p>{data.description}</p>
       <DestinationInfo title='avg. distance'>{data.distance}</DestinationInfo>

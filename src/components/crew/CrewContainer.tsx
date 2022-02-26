@@ -58,14 +58,14 @@ const crew = [
 ];
 
 const CrewContainer: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  const { currentSubpage, subpageRefs, addSubpageRef, scrollIntoSubpage } = useSlider(containerRef.current, crew.length);
+  const { setPageContainerRef, currentSubpage, subpageRefs, addSubpageRef, scrollIntoSubpage } = useSlider(crew.length);
+
   return (
     <>
       <PageNavigation currentSubpage={currentSubpage} subpageRefs={subpageRefs} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='02'>Meet your crew</PageHeading>
-      <CrewContainerStyled ref={containerRef}>
+      <CrewContainerStyled ref={setPageContainerRef}>
         {crew.map(item => <CrewComponent key={item.id} addRef={addSubpageRef} data={item} />)}
       </CrewContainerStyled>
     </>

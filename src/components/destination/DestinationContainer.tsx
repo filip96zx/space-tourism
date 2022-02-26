@@ -68,15 +68,13 @@ const titleList = destinations.map(item => item.title);
 
 const DestinationContainer: React.FC = () => {
 
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const { currentSubpage, subpageRefs, addSubpageRef, scrollIntoSubpage } = useSlider(containerRef.current, destinations.length);
+  const { setPageContainerRef, currentSubpage, subpageRefs, addSubpageRef, scrollIntoSubpage } = useSlider(destinations.length);
 
   return (
     <>
       <PageNavigation Styling={DestinationNavigationStyled} currentSubpage={currentSubpage} subpageRefs={subpageRefs} buttonsText={titleList} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='01'>pick your destination</PageHeading>
-      <DestinationContainerStyled ref={containerRef}>
+      <DestinationContainerStyled ref={setPageContainerRef}>
         {destinations.map(item => <DestinationComponent key={item.id} addRef={addSubpageRef} data={item} />)}
       </DestinationContainerStyled>
     </>

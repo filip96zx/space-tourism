@@ -12,13 +12,14 @@ const DestinationInfoStyled = styled.div`
   }
 
   .name {
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 2.3625px;
-    font-weight: 200;
   }
 
   .content {
+    font-family: "Bellefair", sans-serif;
     font-size: 28px;
     line-height: 32px;
   }
