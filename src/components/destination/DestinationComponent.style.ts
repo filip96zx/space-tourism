@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const DestinationComponentStyled = styled.div`
   width: 100vw;
   scroll-snap-align: start;
+  min-height: 100vh;
 
   h2 {
     margin-top: 74px;
