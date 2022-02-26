@@ -16,13 +16,25 @@ const useSlider = (subpagesCount: number) => {
     }, []);
 
 
-  const setContainerScrollSnapMandatory = (milliseconds: number) => {
-    setTimeout(() => {
-      pageContainer!.style.scrollSnapType = 'x mandatory';
-    }, milliseconds);
+  const setContainerScrollSnapMandatory = (whenReachRef: HTMLDivElement) => {
+    let counter = 0;
+
+    const startInterval = setInterval(() => {
+      counter++;
+      if (pageContainer?.scrollLeft === window.innerWidth * subpageRefs.indexOf(whenReachRef)) {
+        pageContainer!.style.scrollSnapType = 'x mandatory';
+        clearInterval(startInterval);
+      }
+      if (counter > 100) {
+        pageContainer!.style.scrollSnapType = 'x mandatory';
+        clearInterval(startInterval);
+      }
+    }, 50);
+
   };
 
   const scrollIntoSubpage = (ref: HTMLDivElement) => {
+
     if (isIOS) {
       pageContainer!.style.scrollSnapType = 'none';
       if (window.scrollY !== 0) {
@@ -32,11 +44,11 @@ const useSlider = (subpagesCount: number) => {
         });
         setTimeout(() => {
           ref.scrollIntoView({ behavior: 'smooth' });
-        }, 550);
-        setContainerScrollSnapMandatory(1600);
+        }, 500);
+        setContainerScrollSnapMandatory(ref);
       } else {
         ref.scrollIntoView({ behavior: 'smooth' });
-        setContainerScrollSnapMandatory(600);
+        setContainerScrollSnapMandatory(ref);
       }
     } else {
       ref.scrollIntoView({ behavior: 'smooth' });
