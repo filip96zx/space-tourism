@@ -8,7 +8,7 @@ const useSlider = (subpagesCount: number) => {
   const [currentSubpage, setCurrentSubpage] = useState<HTMLDivElement>();
   const [subpageRefs, setSubpageRefs] = useState<HTMLDivElement[]>([]);
 
-  const pageContainer = pageContainerRef.current;
+  let pageContainer = pageContainerRef.current;
 
   const addSubpageRef = useCallback(
     (ref: HTMLDivElement) => {
@@ -59,13 +59,13 @@ const useSlider = (subpagesCount: number) => {
       };
 
       if (pageContainer) {
-        pageContainer.addEventListener('scroll', () => { changeCurrentSubpage(pageContainer); });
+        pageContainer.addEventListener('scroll', () => { changeCurrentSubpage(pageContainer!); });
       }
     }
   }, [subpageRefs, pageContainer, subpagesCount]);
 
   return {
-    setPageContainerRef: () => pageContainerRef,
+    setPageContainerRef: pageContainerRef,
     currentSubpage,
     subpageRefs,
     addSubpageRef,

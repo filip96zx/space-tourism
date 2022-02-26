@@ -5,10 +5,9 @@ const PagePictureStyled = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 140px;
-  background-color: red;
   img {
     width: 170px;
-    height: 170px; 
+    height: 170px;
     vertical-align: middle;
   }
   .technology-picture img{
