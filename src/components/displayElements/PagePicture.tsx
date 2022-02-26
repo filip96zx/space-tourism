@@ -2,21 +2,40 @@ import React from 'react';
 import PagePictureStyled from './PagePicture.style';
 
 interface Props {
-  imagePaths: {
+  imagePaths?: {
     webp: string;
     png: string;
   };
+  techImagePaths?: {
+    landscape: string;
+    portrait: string;
+  };
+  alt: string;
 };
 
-const DestinationPicture: React.FC<Props> = ({ imagePaths }) => {
-  return (
-    <PagePictureStyled>
-      <picture>
-        <source srcSet={imagePaths.webp} type='image/webp' />
-        <img src={imagePaths.png} alt='planet' />
-      </picture>
-    </PagePictureStyled>
-  );
+const PagePicture: React.FC<Props> = ({ imagePaths, techImagePaths, alt }) => {
+
+  if (imagePaths) {
+    return (
+      <PagePictureStyled>
+        <picture>
+          <source srcSet={imagePaths.webp} type='image/webp' />
+          <img src={imagePaths.png} alt={alt} />
+        </picture>
+      </PagePictureStyled>
+    );
+  } else if (techImagePaths) {
+    return (
+      <PagePictureStyled>
+        <picture className="technology-picture">
+          <source src={techImagePaths.portrait} media="(min-width: 768px)" />
+          <img src={techImagePaths.landscape} alt={alt} />
+        </picture>
+      </PagePictureStyled>
+    );
+  } else {
+    return <></>;
+  }
 };
 
-export default DestinationPicture;
+export default PagePicture;
