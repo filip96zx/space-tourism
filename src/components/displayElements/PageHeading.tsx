@@ -9,9 +9,7 @@ interface Props {
 
 const PageHeading: React.FC<Props> = ({ children, nrAnnotation }) => {
   return (
-    <PageHeadingStyled>
-      <h3><span>{nrAnnotation}</span>{children}</h3>
-    </PageHeadingStyled>
+    <PageHeadingStyled><span>{nrAnnotation}</span>{children}</PageHeadingStyled>
   );
 };
 
