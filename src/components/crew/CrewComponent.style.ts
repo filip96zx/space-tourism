@@ -76,7 +76,7 @@ const CrewComponentStyled = styled.div`
     p {
       font-size: 16px;
       line-height: 28px;
-      margin: 0 155px;
+      margin: 0 20vw;
     }
     .image-container {
       div {

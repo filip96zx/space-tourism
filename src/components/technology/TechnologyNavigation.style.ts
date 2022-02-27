@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../globalStyles/breakpoints';
 import PageNavigationBase from '../displayElements/PageNavigationBase.style';
 
 const TechnologyNavigationStyled = styled(PageNavigationBase)`
@@ -15,6 +16,11 @@ const TechnologyNavigationStyled = styled(PageNavigationBase)`
       color: black;
       background-color: white;
     }
+  }
+
+  @media ${breakpoints.tablet} {
+    top: calc(30vh + 140px);
+
   }
 `;
 
