@@ -24,10 +24,6 @@ const PageHeadingStyled = styled.h3`
     width: auto;
     text-align: left;
     letter-spacing: 3.375px;
-   
-    span { 
-      letter-spacing: 3.375px;  
-    }
   }
 `;
 
