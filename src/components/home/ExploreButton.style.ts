@@ -23,7 +23,7 @@ const ExploreButtonsStyled = styled.button`
     box-shadow: 0 0 50px 50px rgba(0,0,0, 0.5);
   }
 
-  @media (${breakpoints.tablet}) {
+  @media ${breakpoints.tablet} {
     min-width: 248px;
     min-height: 248px;
     font-size: 32px;

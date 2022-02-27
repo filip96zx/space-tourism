@@ -42,7 +42,7 @@ const HomeContainerStyled = styled.div`
   }
 
 
-  @media (${breakpoints.tablet}) {
+  @media ${breakpoints.tablet} {
     background-image: url(${backgroundTablet});
 
     section {
