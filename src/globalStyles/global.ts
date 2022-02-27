@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Barlow', sans-serif;
     color: var(--font-color);
     width: 100vw;
+    background-color: var(--main-color);
+    //overflow-y: hidden;
   }
 
   h1, h2, h3, h4 {
@@ -44,19 +46,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 20px;
     letter-spacing: 4.75px;
   }
-
-  .subheading-1 {
-    font-family: 'Bellefair', serif;
-    font-size: 28px;
-  }
-
-  .subheading-2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px;
-    letter-spacing: 2.35px;
-  }
-
-
 
 `;
 
