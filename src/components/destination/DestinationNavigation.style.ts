@@ -21,6 +21,16 @@ const DestinationNavigationStyled = styled(PageNavigationBase)`
       border-bottom: 3px solid var(--font-color);
     }
   }
+  @media (min-width: 768px) {
+    //top: calc(155px + 0.39 * 100vw);
+    top: min(calc(155px + 0.39 * 100vw), calc(155px + 0.39 * 100vh));
+
+    button {
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.7px;
+    }
+  }
 `;
 
 export default DestinationNavigationStyled;

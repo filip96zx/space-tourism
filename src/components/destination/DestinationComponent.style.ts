@@ -11,9 +11,11 @@ const DestinationComponentStyled = styled.div`
     text-align: center;
     text-transform: uppercase;
     font-size: 64px;
+    line-height: 64px;
   }
 
   p {
+    color: var(--secondary-color);
     font-weight: 200;
     margin: 0 24px;
     text-align: center;
@@ -21,6 +23,23 @@ const DestinationComponentStyled = styled.div`
     border-bottom: 1px solid #383B4B;
     line-height: 25px;
     font-size: 15px;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 80px;
+      line-height: 92px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      margin: 0 12%;
+    }
+    .info-container{
+      margin: 0 12%;
+      display: flex;
+    }
+
   }
 
 `;
