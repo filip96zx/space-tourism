@@ -13,6 +13,7 @@ import PageHeading from '../displayElements/PageHeading';
 import CrewContainerStyled from './CrewContainer.style';
 import CrewComponent from './CrewComponent';
 import PageNavigation from '../displayElements/PageNavigation';
+import CrewNavigationStyled from './CrewNavigation.style';
 
 const crew = [
   {
@@ -63,7 +64,7 @@ const CrewContainer: React.FC = () => {
 
   return (
     <>
-      <PageNavigation currentSubpage={currentSubpage} subpageRefs={subpageRefs} scrollFn={scrollIntoSubpage} />
+      <PageNavigation Styling={CrewNavigationStyled} currentSubpage={currentSubpage} subpageRefs={subpageRefs} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='02'>Meet your crew</PageHeading>
       <CrewContainerStyled ref={setPageContainerRef}>
         {crew.map(item => <CrewComponent key={item.id} addRef={addSubpageRef} data={item} />)}

@@ -1,9 +1,14 @@
 import styled from 'styled-components';
+import breakpoints from '../../globalStyles/breakpoints';
 
 const CrewComponentStyled = styled.div`
   scroll-snap-align: start;
   min-width: 100vw;
   min-height: 100vh;
+
+  .tablet-container{
+    display: none;
+  }
 
   hr {
     margin: 0 24px;
@@ -40,8 +45,49 @@ const CrewComponentStyled = styled.div`
     padding-bottom: 32px;
     line-height: 25px;
     font-size: 15px;
+    color: var(--secondary-color);
   }
 
+  @media ${breakpoints.tablet} { 
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    .mobile-container {
+      display: none;
+    }
+    .tablet-container{
+      display: block;
+    }
+    hr {
+      display: none;
+    }
+    
+    h3 {
+      margin-top: 150px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+    h2 {
+      font-size: 40px;
+      line-height: 46px;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      margin: 0 155px;
+    }
+    .image-container {
+      div {
+        margin-top: 80px;
+      }
+      img {
+        width: 450px;
+        height: 570px;
+      }
+    }
+  }
 `;
 
 export default CrewComponentStyled;
