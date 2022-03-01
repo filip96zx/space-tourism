@@ -64,7 +64,7 @@ const CrewComponentStyled = styled.div`
     }
     
     h3 {
-      margin-top: 150px;
+      margin-top: 220px;
       font-size: 24px;
       line-height: 28px;
     }
