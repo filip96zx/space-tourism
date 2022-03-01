@@ -19,7 +19,7 @@ const TechnologyNavigationStyled = styled(PageNavigationBase)`
   }
 
   @media ${breakpoints.tablet} {
-    top: calc(30vh + 140px);
+    top: calc(310px + 220px);
 
   }
 `;

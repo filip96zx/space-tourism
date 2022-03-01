@@ -38,12 +38,11 @@ const TechnologyComponentStyled = styled.div`
 
   @media ${breakpoints.tablet} {
     
-    picture{
-      width: 100%;
-    }
-   
-    img {
-      height: 30vh
+    .picture-container {
+      margin-top: 220px;
+      img {
+        height: 310px;
+      }
     }
 
     h3 {
