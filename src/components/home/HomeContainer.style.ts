@@ -47,11 +47,12 @@ const HomeContainerStyled = styled.div`
 
     section {
       width: min-content;
+      margin-top: max(200px, 20vh);
     }
     span{
       font-size: 20px;
       letter-spacing: 3.375px;
-      margin-bottom: 24px;
+      margin: 0 0 24px;
     }
 
     h2 {
@@ -62,7 +63,7 @@ const HomeContainerStyled = styled.div`
     p {
       font-size: 16px;
       line-height: 28px;
-      margin-bottom: 50px;
+      margin-bottom: 156px;
     }
   }
 
