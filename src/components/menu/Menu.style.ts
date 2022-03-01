@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../globalStyles/breakpoints';
 
 const MenuStyled = styled.header`
   position: absolute;
@@ -28,6 +29,16 @@ const MenuStyled = styled.header`
     z-index: 3;
     background: none;
     border: none;
+  }
+
+  @media ${breakpoints.tablet} {
+    .menu-icon{
+      display: none;
+    }
+    .logo {
+      width: 48px;
+      height: 48px;
+    }
   }
 `;
 

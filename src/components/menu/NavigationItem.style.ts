@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+import breakpoints from '../../globalStyles/breakpoints';
 
 const NavigationItemStyled = styled.li`
   counter-increment: counter;
   margin-bottom: 32px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   
   a {
     font-family: 'Barlow Condensed', sans-serif;
@@ -10,7 +13,6 @@ const NavigationItemStyled = styled.li`
     letter-spacing: 2.7px;
     color: var(--font-color);
     text-decoration: none;
-    font-weight: 200;
     text-transform: uppercase;
     :before {
       content: "0" counter(counter);
@@ -19,6 +21,25 @@ const NavigationItemStyled = styled.li`
       letter-spacing: 2.7px;
     }
   }
+  @media ${breakpoints.tablet} {
+    padding: 0;
+    margin-bottom: 0;
+    a {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 17px;
+      margin: 0 13px;
+      padding: 40px 0;
+      letter-spacing: 2.3625px;
+      transition: .3s;
+      :before {
+        content: none;
+      }
+      &.active {
+        border-bottom: 3px solid var(--font-color);
+      }
+    }
+    }
 
 `;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NavigationItemStyled from './NavigationItem.style';
 
 interface Props {
@@ -9,9 +9,17 @@ interface Props {
 }
 
 const NavigationItem: React.FC<Props> = ({ text, to, closeMenu }) => {
+
+  const location = useLocation();
+
+  const isActive = () => {
+    if (location.pathname === '/' && text === 'home') return 'active';
+    return location.pathname.substring(1) === text ? 'active' : '';
+  };
+
   return (
-    <NavigationItemStyled>
-      <Link onClick={closeMenu} to={to}>{text}</Link>
+    <NavigationItemStyled >
+      <Link className={isActive()} onClick={closeMenu} to={to}>{text}</Link>
     </NavigationItemStyled>
   );
 };
