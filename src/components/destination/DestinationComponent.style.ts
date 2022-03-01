@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../globalStyles/breakpoints';
 
 const DestinationComponentStyled = styled.div`
   width: 100vw;
@@ -25,7 +26,10 @@ const DestinationComponentStyled = styled.div`
     font-size: 15px;
   }
 
-  @media (min-width: 768px) {
+  @media ${breakpoints.tablet} {
+    .picture-container {
+      margin-top: 220px;
+    }
     h2 {
       font-size: 80px;
       line-height: 92px;

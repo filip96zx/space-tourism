@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../globalStyles/breakpoints';
 import PageNavigationBase from '../displayElements/PageNavigationBase.style';
 
 const DestinationNavigationStyled = styled(PageNavigationBase)`
@@ -21,9 +22,8 @@ const DestinationNavigationStyled = styled(PageNavigationBase)`
       border-bottom: 3px solid var(--font-color);
     }
   }
-  @media (min-width: 768px) {
-    //top: calc(155px + 0.39 * 100vw);
-    top: min(calc(155px + 0.39 * 100vw), calc(155px + 0.39 * 100vh));
+  @media ${breakpoints.tablet} {
+    top: min(calc(220px + 0.39 * 100vw), calc(220px + 0.39 * 100vh));
 
     button {
       font-size: 16px;
