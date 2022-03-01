@@ -17,7 +17,7 @@ const PagePicture: React.FC<Props> = ({ imagePaths, techImagePaths, alt }) => {
 
   if (imagePaths) {
     return (
-      <PagePictureStyled>
+      <PagePictureStyled className='picture-container'>
         <picture>
           <source srcSet={imagePaths.webp} type='image/webp' />
           <img src={imagePaths.png} alt={alt} />
@@ -26,7 +26,7 @@ const PagePicture: React.FC<Props> = ({ imagePaths, techImagePaths, alt }) => {
     );
   } else if (techImagePaths) {
     return (
-      <PagePictureStyled>
+      <PagePictureStyled className='picture-container'>
         <picture className="technology-picture">
           <source src={techImagePaths.portrait} media="(min-width: 768px)" />
           <img src={techImagePaths.landscape} alt={alt} />

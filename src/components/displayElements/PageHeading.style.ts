@@ -20,6 +20,7 @@ const PageHeadingStyled = styled.h3`
 
   @media ${breakpoints.tablet} {
     margin-left: calc( 0.05 * 100vw );
+    top: 136px;
     font-size: 20px;
     width: auto;
     text-align: left;

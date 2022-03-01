@@ -11,8 +11,11 @@ const PagePictureStyled = styled.div`
     height: 170px;
     vertical-align: middle;
   }
-  .technology-picture img{
-    width: 100%;
+  .technology-picture{
+    width: 100vw;
+    img {
+      width: 100vw;
+    }
   }
 
   @media ${breakpoints.tablet} {
