@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import breakpoints from '../../globalStyles/breakpoints';
 
 const DestinationComponentStyled = styled.div`
-  width: 100vw;
+  width: 100%;
   scroll-snap-align: start;
   min-height: 100vh;
 

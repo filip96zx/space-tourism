@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const PageNavigationBase = styled.ul`
-  width: 100vw;
+  width: 100%;
   list-style: none;
   display: flex;
   justify-content: center;

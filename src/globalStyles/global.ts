@@ -17,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Barlow', sans-serif;
     color: var(--font-color);
-    width: 100vw;
     background-color: var(--main-color);
     //overflow-y: hidden;
   }
