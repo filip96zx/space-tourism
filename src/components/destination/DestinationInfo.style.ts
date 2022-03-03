@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import breakpoints from '../../globalStyles/breakpoints';
+
 
 const DestinationInfoStyled = styled.div`
   width: 100%;
@@ -12,6 +14,7 @@ const DestinationInfoStyled = styled.div`
   }
 
   .name {
+    color: var(--secondary-color);
     font-family: "Barlow Condensed", sans-serif;
     font-size: 14px;
     line-height: 17px;
@@ -24,6 +27,11 @@ const DestinationInfoStyled = styled.div`
     line-height: 32px;
   }
 
+  @media ${breakpoints.desktop} {
+    width: auto;
+    text-align: left;
+  }
+  
 `;
 
 export default DestinationInfoStyled;

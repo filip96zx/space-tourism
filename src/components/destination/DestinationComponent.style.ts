@@ -26,6 +26,10 @@ const DestinationComponentStyled = styled.div`
     font-size: 15px;
   }
 
+  .full-width {
+    display: none;
+  }
+
   @media ${breakpoints.tablet} {
     .picture-container {
       margin-top: 220px;
@@ -42,6 +46,47 @@ const DestinationComponentStyled = styled.div`
     .info-container{
       margin: 0 12%;
       display: flex;
+    }
+
+  }
+  @media ${breakpoints.desktop} {
+    display: flex;
+    align-items: center;
+    gap:150px;
+    min-width: 100%;
+    padding-top: 10%;
+    .picture-container {
+      display: block;
+      margin: auto;
+      margin-left: 16%;
+      img {
+        height: auto;
+        width: auto;
+      }
+    }
+    section {
+      display: block;
+      width: 445px;
+      margin-right: max(165px, 11%);
+    }
+
+    h2 {
+      font-size: 100px;
+      line-height: 115px;
+      text-align: left;
+    }
+    p {
+      font-size: 18px;
+      line-height: 32px;
+      text-align: left;
+      margin: 0px;
+    }
+    .info-container{
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 0;
+      gap: 68px;
+      text-align: left;
     }
 
   }

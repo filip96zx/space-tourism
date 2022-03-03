@@ -31,6 +31,11 @@ const DestinationNavigationStyled = styled(PageNavigationBase)`
       letter-spacing: 2.7px;
     }
   }
+  @media ${breakpoints.desktop} {
+    width: auto;
+    top: calc(50% - 200px);
+    right: max(calc(165px + 160px), calc(11% + 160px));
+  }
 `;
 
 export default DestinationNavigationStyled;
