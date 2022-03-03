@@ -25,8 +25,8 @@ const NavigationStyled = styled.nav`
   @media ${breakpoints.tablet} {
     position: absolute;
     background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(81.5485px);
-    backdrop-filter: none;
+    backdrop-filter: blur(31px);
+    background: blur(30px);
     top: 0;
     right: 0;
     width: auto;
@@ -40,8 +40,10 @@ const NavigationStyled = styled.nav`
       margin-top: 0;
       display: flex;
     }
-
-
+  }
+  @media ${breakpoints.desktop} {
+    padding-right: max(165px, 11%);
+    padding-left: 100px;
   }
 `;
 

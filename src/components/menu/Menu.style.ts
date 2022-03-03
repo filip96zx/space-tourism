@@ -13,6 +13,7 @@ const MenuStyled = styled.header`
   }
 
   .logo {
+    cursor: pointer;
     position: absolute;
     width: 40px;
     height: 40px;
@@ -39,6 +40,15 @@ const MenuStyled = styled.header`
       width: 48px;
       height: 48px;
     }
+  }
+
+  @media ${breakpoints.desktop} {
+    margin-top: 40px;
+
+    .logo{
+      margin-left: 31px;
+    }
+
   }
 `;
 

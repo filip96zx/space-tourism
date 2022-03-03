@@ -41,6 +41,22 @@ const NavigationItemStyled = styled.li`
     }
     }
 
+  @media ${breakpoints.desktop} {
+    a {
+      font-size: 16px;
+      line-height: 19px;
+      margin: 0 24px;
+      letter-spacing: 2.7px;
+      :before {
+        content: "0" counter(counter);
+        font-weight: 700;
+        margin-right: 14px;
+        letter-spacing: 2.7px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
 `;
 
 export default NavigationItemStyled;
