@@ -14,6 +14,7 @@ const ExploreButtonsStyled = styled.button`
   background-color: var(--font-color);
   border: none;
   margin-top: 70px;
+  color: var(--main-color);
   -webkit-tap-highlight-color: transparent;
 
   cursor: pointer;
@@ -31,6 +32,15 @@ const ExploreButtonsStyled = styled.button`
     letter-spacing: 2px;
     margin: auto;
     margin-bottom: 90px;
+  }
+  @media ${breakpoints.desktop} {
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 2px;
+    min-width: 274px;
+    min-height: 274px;
+    margin-bottom: max(130px, 15vh);
+    margin-right: max(165px, 11%);
   }
 `;
 

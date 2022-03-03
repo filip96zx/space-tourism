@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import backgroundMobile from '../../assets/home/background-home-mobile.jpg';
-import backgroundTablet from '../../assets/home//background-home-tablet.jpg';
+import backgroundTablet from '../../assets/home/background-home-tablet.jpg';
+import backgroundDesktop from '../../assets/home/background-home-desktop.jpg';
 import breakpoints from '../../globalStyles/breakpoints';
 
 
@@ -49,7 +50,7 @@ const HomeContainerStyled = styled.div`
       width: min-content;
       margin-top: max(200px, 20vh);
     }
-    span{
+    span {
       font-size: 20px;
       letter-spacing: 3.375px;
       margin: 0 0 24px;
@@ -66,6 +67,34 @@ const HomeContainerStyled = styled.div`
       margin-bottom: 156px;
     }
   }
+
+  @media ${breakpoints.desktop} {
+    background-image: url(${backgroundDesktop});
+    flex-direction: row;
+    align-items: flex-end;
+
+    section {
+      margin-left: max(165px, 11%);
+    }
+
+    span{
+      font-size: 28px;
+      line-height: 34px;
+      letter-spacing: 4.7px;
+    }
+
+    h2 {
+      font-size: 150px;
+      line-height: 172px;
+      margin-bottom: 24px;
+    }
+    
+    p {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+
 
 `;
 

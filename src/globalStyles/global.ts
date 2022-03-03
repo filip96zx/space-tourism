@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import breakpoints from './breakpoints';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -18,6 +19,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Barlow', sans-serif;
     color: var(--font-color);
     background-color: var(--main-color);
+    @media ${breakpoints.desktop} {
+    overflow: hidden;
+    }
   }
 
   h1, h2, h3, h4 {
