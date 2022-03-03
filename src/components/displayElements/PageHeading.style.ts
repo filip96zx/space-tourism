@@ -26,6 +26,14 @@ const PageHeadingStyled = styled.h3`
     text-align: left;
     letter-spacing: 3.375px;
   }
+
+  @media ${breakpoints.desktop} {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 4.725px;
+    margin-left: calc( 0.11 * 100vw );
+    top: 212px;
+  }
 `;
 
 export default PageHeadingStyled;

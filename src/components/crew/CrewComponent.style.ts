@@ -39,7 +39,6 @@ const CrewComponentStyled = styled.div`
   }
 
   p {
-    font-weight: 200;
     margin: 16px 24px;
     text-align: center;
     padding-bottom: 32px;
@@ -87,6 +86,44 @@ const CrewComponentStyled = styled.div`
         height: 570px;
       }
     }
+  }
+  
+  @media ${breakpoints.desktop} { 
+    .tablet-container {
+      display: flex;
+      align-items: flex-end;
+    }
+    .image-container{
+      flex-grow: 1;
+      img{
+        height: 100%;
+        width: 100%;
+      }
+    }
+    section {
+      display: block;
+      margin-left: max(165px, 11%);
+    }
+    h3 {
+      font-size: 32px;
+      line-height: 37px;
+      text-align: left;
+    }
+    h2 {
+      font-size: 56px;
+      line-height: 64px;
+      text-align: left;
+      margin-top: 15px;
+    }
+      
+    p {
+      font-size: 18px;
+      line-height: 32px;
+      max-width: 445px;
+      text-align: left;
+      margin: 27px 0 max(25vh, 230px) 0;
+    }
+
   }
 `;
 

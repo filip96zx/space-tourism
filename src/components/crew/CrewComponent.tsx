@@ -14,14 +14,18 @@ const CrewComponent: React.FC<Props<Crew>> = ({ data, addRef }) => {
       <div className="mobile-container">
         <PagePicture imagePaths={data.imagePaths} alt={data.name + " photo"} />
         <hr />
+        <section>
         <h3 >{data.role}</h3>
         <h2 >{data.name}</h2>
         <p>{data.description}</p>
+        </section>
       </div>
       <div className="tablet-container">
-        <h3 >{data.role}</h3>
-        <h2 >{data.name}</h2>
-        <p>{data.description}</p>
+        <section>
+          <h3 >{data.role}</h3>
+          <h2 >{data.name}</h2>
+          <p>{data.description}</p>
+        </section>
         <div className="image-container">
           <PagePicture imagePaths={data.imagePaths} alt={data.name + " photo"} />
         </div>
