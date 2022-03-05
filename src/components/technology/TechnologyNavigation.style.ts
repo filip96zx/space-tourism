@@ -36,6 +36,13 @@ const TechnologyNavigationStyled = styled(PageNavigationBase)`
       line-height: 37px;
       text-align: center;
       letter-spacing: 2px;
+      :hover {
+        border: 1px solid var(--font-color);
+      }
+      &.active {
+      color: black;
+      background-color: white;
+    }
     }
   }
 `;

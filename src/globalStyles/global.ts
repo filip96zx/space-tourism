@@ -1,5 +1,17 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
 import breakpoints from './breakpoints';
+
+
+const transitionIn = keyframes`
+    from {
+      opacity: 0;
+      transform: rotateX(-10deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0);
+    }
+`;
 
 const GlobalStyle = createGlobalStyle`
 
@@ -19,6 +31,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Barlow', sans-serif;
     color: var(--font-color);
     background-color: var(--main-color);
+    
+    .page-container > * {
+      animation: ${transitionIn} 0.3s;
+    }
+
     @media ${breakpoints.desktop} {
     overflow: hidden;
     }

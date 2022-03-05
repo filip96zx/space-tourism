@@ -66,7 +66,7 @@ const CrewContainer: React.FC = () => {
     <>
       <PageNavigation Styling={CrewNavigationStyled} currentSubpage={currentSubpage} subpageRefs={subpageRefs} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='02'>Meet your crew</PageHeading>
-      <CrewContainerStyled ref={setPageContainerRef}>
+      <CrewContainerStyled className='page-container' ref={setPageContainerRef}>
         {crew.map(item => <CrewComponent key={item.id} addRef={addSubpageRef} data={item} />)}
       </CrewContainerStyled>
     </>

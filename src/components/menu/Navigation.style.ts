@@ -8,9 +8,12 @@ const NavigationStyled = styled.nav`
   width: 75%;
   height: 100vh;
   padding-left: 32px;
-  background-color: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(31px);
-  transition: .3s;
+  background-color: rgba(0, 0, 0, 0.88);
+  @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(31px);
+  }
+
   z-index: 2;
   &.hide {
     transform: translateX(100%);
@@ -24,8 +27,6 @@ const NavigationStyled = styled.nav`
 
   @media ${breakpoints.tablet} {
     position: absolute;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(31px);
     background: blur(30px);
     top: 0;
     right: 0;
@@ -42,6 +43,7 @@ const NavigationStyled = styled.nav`
     }
   }
   @media ${breakpoints.desktop} {
+    background-color: rgba(125, 125, 125, 0.18              );
     padding-right: max(165px, 11%);
     padding-left: 100px;
   }

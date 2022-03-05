@@ -5,7 +5,7 @@ import HomeContainerStyled from './HomeContainer.style';
 
 const HomeContainer: React.FC = () => {
   return (
-    <HomeContainerStyled>
+    <HomeContainerStyled className='page-container'>
       <section>
         <span>SO, YOU WANT TO TRAVEL TO</span>
         <h2>SPACE</h2>

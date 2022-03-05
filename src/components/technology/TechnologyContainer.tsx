@@ -54,7 +54,7 @@ const TechnologyContainer: React.FC = () => {
     <>
       <PageNavigation Styling={TechnologyNavigationStyled} currentSubpage={currentSubpage} subpageRefs={subpageRefs} buttonsText={buttonsText} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='03'>space launch 101</PageHeading>
-      <TechnologyContainerStyled ref={setPageContainerRef}>
+      <TechnologyContainerStyled className='page-container' ref={setPageContainerRef}>
         {technologies.map(item => <TechnologyComponent key={item.id} addRef={addSubpageRef} data={item} />)}
       </TechnologyContainerStyled>
     </>

@@ -14,9 +14,17 @@ const CrewNavigationStyled = styled(PageNavigationBase)`
     bottom: min(calc(25vh - 120px), calc(230px - 120px));
     gap: 24px;
     button {
-    margin: 0;
-    height: 15px;
-    width: 15px;
+      margin: 0;
+      height: 15px;
+      width: 15px;
+      :hover {
+        background-color: var(--font-color);
+        opacity: 0.5;
+      }
+      &.active{
+        transition: 0.15s;
+        opacity: 1;
+      }
     }
   }
 `;

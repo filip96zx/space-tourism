@@ -31,7 +31,6 @@ const NavigationItemStyled = styled.li`
       margin: 0 13px;
       padding: 40px 0;
       letter-spacing: 2.3625px;
-      transition: .3s;
       :before {
         content: none;
       }
@@ -54,6 +53,12 @@ const NavigationItemStyled = styled.li`
         letter-spacing: 2.7px;
         font-size: 16px;
         line-height: 19px;
+      }
+      :hover {
+        border-bottom: 3px solid rgba(255, 255, 255 , 0.5);
+      }
+      &.active {
+        border-bottom: 3px solid var(--font-color);
       }
     }
   }

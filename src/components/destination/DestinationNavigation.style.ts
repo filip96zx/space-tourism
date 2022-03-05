@@ -35,6 +35,14 @@ const DestinationNavigationStyled = styled(PageNavigationBase)`
     width: auto;
     top: calc(50% - 200px);
     right: max(calc(165px + 160px), calc(11% + 160px));
+    button {
+      :hover{
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+      }
+      &.active{
+      border-bottom: 3px solid var(--font-color);
+      }
+    }
   }
 `;
 

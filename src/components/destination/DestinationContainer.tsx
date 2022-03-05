@@ -74,7 +74,7 @@ const DestinationContainer: React.FC = () => {
     <>
       <PageNavigation Styling={DestinationNavigationStyled} currentSubpage={currentSubpage} subpageRefs={subpageRefs} buttonsText={titleList} scrollFn={scrollIntoSubpage} />
       <PageHeading nrAnnotation='01'>pick your destination</PageHeading>
-      <DestinationContainerStyled ref={setPageContainerRef}>
+      <DestinationContainerStyled className='page-container' ref={setPageContainerRef}>
         {destinations.map(item => <DestinationComponent key={item.id} addRef={addSubpageRef} data={item} />)}
       </DestinationContainerStyled>
     </>
