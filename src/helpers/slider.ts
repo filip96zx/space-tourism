@@ -21,7 +21,6 @@ const useSlider = (subpagesCount: number) => {
       setSubpageRefs(prevState => [...prevState.filter(item => item !== ref), ref]);
     }, []);
 
-
   const setContainerScrollSnapMandatory = (whenReachRef: HTMLDivElement) => {
     let counter = 0;
 
@@ -38,7 +37,6 @@ const useSlider = (subpagesCount: number) => {
     }, 50);
 
   };
-
 
   const scrollIntoSubpage = (ref: HTMLDivElement) => {
 
@@ -69,11 +67,10 @@ const useSlider = (subpagesCount: number) => {
 
       const changeCurrentSubpage = () => {
         let currentValue;
-        //console.log(containerStyle.flexDirection);
         if (containerStyle?.flexDirection === 'row') {
           currentValue = Math.floor(((pageContainer!.scrollLeft + window.innerWidth / 2) / window.innerWidth));
         } else {
-          currentValue = Math.floor(((window.scrollY + + window.innerHeight / 2) / window.innerHeight));
+          currentValue = Math.floor(((pageContainer!.scrollTop + + window.innerHeight / 2) / window.innerHeight));
         }
         if (lastValue !== currentValue) {
           lastValue = currentValue;
@@ -83,11 +80,8 @@ const useSlider = (subpagesCount: number) => {
 
       pageContainer!.addEventListener('scroll', changeCurrentSubpage);
 
-      window.addEventListener('scroll', changeCurrentSubpage);
-
-      return () => { window.removeEventListener('scroll', changeCurrentSubpage); };
-
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subpageRefs, pageContainer, subpagesCount, containerStyle]);
 
   return {
