@@ -17,7 +17,6 @@ const DestinationComponentStyled = styled.div`
 
   p {
     color: var(--secondary-color);
-    font-weight: 200;
     margin: 0 24px;
     text-align: center;
     padding-bottom: 32px;
