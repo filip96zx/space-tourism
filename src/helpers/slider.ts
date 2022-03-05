@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-const isIOS = (/iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+const isIOS = (/iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel'));
 
 const useSlider = (subpagesCount: number) => {
 
@@ -9,6 +9,12 @@ const useSlider = (subpagesCount: number) => {
   const [subpageRefs, setSubpageRefs] = useState<HTMLDivElement[]>([]);
 
   let pageContainer = pageContainerRef.current;
+
+  const containerStyle = useMemo(() => {
+    if (pageContainer) {
+      return getComputedStyle(pageContainer);
+    }
+  }, [pageContainer]);
 
   const addSubpageRef = useCallback(
     (ref: HTMLDivElement) => {
@@ -21,11 +27,11 @@ const useSlider = (subpagesCount: number) => {
 
     const startInterval = setInterval(() => {
       counter++;
-      if (pageContainer?.scrollLeft === window.innerWidth * subpageRefs.indexOf(whenReachRef)) {
+      if (pageContainer?.scrollLeft === window.innerWidth * subpageRefs.indexOf(whenReachRef) && containerStyle?.flexDirection !== 'column') {
         pageContainer!.style.scrollSnapType = 'x mandatory';
         clearInterval(startInterval);
       }
-      if (counter > 100) {
+      if (counter > 100 && containerStyle?.flexDirection !== 'column') {
         pageContainer!.style.scrollSnapType = 'x mandatory';
         clearInterval(startInterval);
       }
@@ -33,11 +39,12 @@ const useSlider = (subpagesCount: number) => {
 
   };
 
+
   const scrollIntoSubpage = (ref: HTMLDivElement) => {
 
     if (isIOS) {
       pageContainer!.style.scrollSnapType = 'none';
-      if (window.scrollY !== 0) {
+      if (window.scrollY !== 0 && containerStyle?.flexDirection !== 'column') {
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
@@ -57,24 +64,31 @@ const useSlider = (subpagesCount: number) => {
 
   useEffect(() => {
     if (subpageRefs.length === subpagesCount) {
-      setCurrentSubpage(subpageRefs[0]);
+      if (currentSubpage === undefined) setCurrentSubpage(subpageRefs[0]);
       let lastValue = 0;
 
-      const changeCurrentSubpage = (container: HTMLDivElement) => {
-
-        const currentValue = Math.floor(((container.scrollLeft + window.innerWidth / 2) / window.innerWidth));
-
+      const changeCurrentSubpage = () => {
+        let currentValue;
+        //console.log(containerStyle.flexDirection);
+        if (containerStyle?.flexDirection === 'row') {
+          currentValue = Math.floor(((pageContainer!.scrollLeft + window.innerWidth / 2) / window.innerWidth));
+        } else {
+          currentValue = Math.floor(((window.scrollY + + window.innerHeight / 2) / window.innerHeight));
+        }
         if (lastValue !== currentValue) {
           lastValue = currentValue;
           setCurrentSubpage(subpageRefs[currentValue]);
         }
       };
 
-      if (pageContainer) {
-        pageContainer.addEventListener('scroll', () => { changeCurrentSubpage(pageContainer!); });
-      }
+      pageContainer!.addEventListener('scroll', changeCurrentSubpage);
+
+      window.addEventListener('scroll', changeCurrentSubpage);
+
+      return () => { window.removeEventListener('scroll', changeCurrentSubpage); };
+
     }
-  }, [subpageRefs, pageContainer, subpagesCount]);
+  }, [subpageRefs, pageContainer, subpagesCount, containerStyle]);
 
   return {
     setPageContainerRef: pageContainerRef,
