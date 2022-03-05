@@ -44,7 +44,8 @@ const MenuStyled = styled.header`
 
   @media ${breakpoints.desktop} {
     margin-top: 40px;
-
+    position: fixed;
+    
     .logo{
       margin-left: 31px;
     }

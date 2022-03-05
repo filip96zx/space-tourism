@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import breakpoints from '../../globalStyles/breakpoints';
 
 const TechnologyComponentStyled = styled.div`
-  width: 100vw;
+  min-width: 100vw;
   scroll-snap-align: start;
   min-height: 100vh;
 
@@ -28,7 +28,6 @@ const TechnologyComponentStyled = styled.div`
   
   p {
     color: var(--secondary-color);
-    font-weight: 200;
     margin: 0 24px;
     text-align: center;
     padding-bottom: 32px;
@@ -60,6 +59,51 @@ const TechnologyComponentStyled = styled.div`
       font-size: 16px;
       line-height: 28px;
       margin: 0 20vw;
+    }
+  }
+  @media ${breakpoints.desktop} {
+    display:flex;
+    flex-direction:row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    section {
+      width: 444px;
+      margin: auto max(165px, 11%) auto max(325px, 22%);
+    }
+
+    .picture-container{
+      margin: 0;
+      width: min-content;
+      height: min-content;
+      .technology-picture{
+        width: auto;
+      }
+      img {
+        width: auto;
+        height: auto;
+      }
+    }
+    
+    h3 {
+      margin: 0;
+      text-align: left;
+    }
+    
+    h2 {
+      text-align: left;
+      display: block;
+      width: max-content;
+      font-size: 56px;
+      line-height: 64px;
+    }
+    
+    p {
+      text-align: left;
+      margin: 0;
+      font-size: 18px;
+      line-height: 32px;
     }
   }
 

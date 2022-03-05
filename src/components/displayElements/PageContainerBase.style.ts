@@ -14,6 +14,8 @@ const PageContainerBase = (mobileBackground?: string, tabletBackground?: string,
  
   @media ${breakpoints.desktop} {
     background-image: url(${desktopBackground});
+    height: 100vh;
+    overflow: hidden;
   }
 
 `;

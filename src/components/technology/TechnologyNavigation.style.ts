@@ -20,7 +20,23 @@ const TechnologyNavigationStyled = styled(PageNavigationBase)`
 
   @media ${breakpoints.tablet} {
     top: calc(310px + 220px);
-
+  }
+  @media ${breakpoints.desktop} { 
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: max(165px, 11%);
+    flex-direction: column;
+    width: auto;
+    gap: 32px;
+    button {
+      width: 80px;
+      height: 80px;
+      font-size: 32px;
+      line-height: 37px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
   }
 `;
 

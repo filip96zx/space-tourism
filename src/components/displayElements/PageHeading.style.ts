@@ -28,6 +28,7 @@ const PageHeadingStyled = styled.h3`
   }
 
   @media ${breakpoints.desktop} {
+    position: fixed;
     font-size: 28px;
     line-height: 34px;
     letter-spacing: 4.725px;

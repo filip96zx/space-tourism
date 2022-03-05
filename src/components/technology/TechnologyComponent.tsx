@@ -11,9 +11,11 @@ const TechnologyComponent: React.FC<Props<Technology>> = ({ data, addRef }) => {
   return (
     <TechnologyComponentStyled ref={componentRef}>
       <PagePicture techImagePaths={data.imagePaths} alt={data.title + " photo"}/>
+      <section>
       <h3>the terminology...</h3>
       <h2>{data.title}</h2>
       <p>{data.description}</p>
+      </section>
     </TechnologyComponentStyled>
   );
 };

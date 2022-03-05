@@ -14,7 +14,7 @@ const PagePictureStyled = styled.div`
   .technology-picture{
     width: 100vw;
     img {
-      width: 100vw;
+      width: 100%;
     }
   }
 
