@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Destination from '../../models/destination.model';
 import DestinationComponent from './DestinationComponent';
 import DestinationContainerStyled from './DestinationContainer.style';

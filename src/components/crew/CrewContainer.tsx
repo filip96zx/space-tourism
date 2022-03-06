@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import useSlider from '../../helpers/slider';
 
 import DouglasPng from '../../assets/crew/image-douglas-hurley.png';
