@@ -12,7 +12,7 @@ const Menu: React.FC = () => {
   const navigate = useNavigate();
 
   const clickHandler = () => {
-    navigate('/');
+    navigate('/space-tourism/');
   };
 
   const toggleMenu = () => {

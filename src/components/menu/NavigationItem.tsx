@@ -13,8 +13,8 @@ const NavigationItem: React.FC<Props> = ({ text, to, closeMenu }) => {
   const location = useLocation();
 
   const isActive = () => {
-    if (location.pathname === '/' && text === 'home') return 'active';
-    return location.pathname.substring(1) === text ? 'active' : '';
+    if (location.pathname === '/space-tourism/' && text === 'home') return 'active';
+    return location.pathname.substring(location.pathname.length-text.length) === text ? 'active' : '';
   };
 
   return (
