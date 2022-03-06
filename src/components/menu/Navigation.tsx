@@ -13,10 +13,10 @@ const Navigation: React.FC<Props> = ({ showMenu, closeMenu }) => {
     <>
       <NavigationStyled className={showMenu ? '' : 'hide'}>
         <ol>
-          <NavigationItem closeMenu={closeMenu} to='/' text='home' />
-          <NavigationItem closeMenu={closeMenu} to='/destination' text='destination' />
-          <NavigationItem closeMenu={closeMenu} to='/crew' text='crew' />
-          <NavigationItem closeMenu={closeMenu} to='/technology' text='technology' />
+          <NavigationItem closeMenu={closeMenu} to='/space-tourism/' text='home' />
+          <NavigationItem closeMenu={closeMenu} to='/space-tourism/destination' text='destination' />
+          <NavigationItem closeMenu={closeMenu} to='/space-tourism/crew' text='crew' />
+          <NavigationItem closeMenu={closeMenu} to='/space-tourism/technology' text='technology' />
         </ol>
       </NavigationStyled>
     </>
